@@ -1,0 +1,1462 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgsmartROI - 스마트농업 ROI 통합 플랫폼</title>
+    <meta name="description" content="AI 기반 스마트팜 투자 분석 및 빅데이터 운영 최적화 플랫폼">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- 네비게이션 -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">AgsmartROI</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#overview" class="text-gray-700 hover:text-green-600 transition">개요</a>
+                    <a href="#service1" class="text-gray-700 hover:text-green-600 transition">시설장비 ROI</a>
+                    <a href="#service2" class="text-gray-700 hover:text-green-600 transition">빅데이터 ROI</a>
+                    <a href="#demo" class="text-gray-700 hover:text-green-600 transition">데모</a>
+                    <a href="index.html#contact" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">문의하기</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-green-50 via-white to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full font-semibold mb-6">
+                    <i class="fas fa-robot mr-2"></i>AI 기반 스마트농업 솔루션
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">AgsmartROI</span><br>
+                    <span class="text-gray-700">스마트농업 ROI 통합 플랫폼</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    설계부터 투자, 행정, 입찰까지 전주기 자동화<br>
+                    WebApp + API 기반의 스마트팜 의사결정 플랫폼
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#demo" class="px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2">
+                        <i class="fas fa-play-circle"></i>
+                        <span>데모 체험하기</span>
+                    </a>
+                    <a href="#overview" class="px-8 py-4 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition inline-flex items-center space-x-2">
+                        <i class="fas fa-info-circle"></i>
+                        <span>자세히 보기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 개요 섹션 -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">AgsmartROI</span>
+                    <span class="text-gray-800">가 필요한 이유</span>
+                </h2>
+                <p class="text-xl text-gray-600">스마트팜 투자와 운영의 모든 단계를 과학적으로 분석합니다</p>
+            </div>
+
+            <!-- 문제점 및 솔루션 -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-3"></i>현재의 문제점
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                            <span>설계·견적의 과대 산정 또는 누락</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                            <span>경제성 없이 보조금 신청 → 투자 리스크</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                            <span>데이터 수집 중심으로 ROI 분석 미흡</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                            <span>입찰 과정에서 정량적 비교·전략 부족</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
+                        <i class="fas fa-check-circle mr-3"></i>AgsmartROI 솔루션
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>AI 기반 설계·견적 자동 최적화</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>정량적 ROI 분석 및 리스크 평가</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>실시간 빅데이터 운영 최적화</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>전략형 보고서 및 입찰자료 자동 생성</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 프로세스 플로우 -->
+            <div class="bg-gradient-to-r from-green-500 to-blue-600 text-white p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-6 text-center">AgsmartROI 프로세스</h3>
+                <div class="grid md:grid-cols-5 gap-4">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-drafting-compass text-3xl"></i>
+                        </div>
+                        <div class="font-bold mb-2">설계 최적화</div>
+                        <div class="text-sm opacity-90">AI 기반 구조·설비 추천</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-calculator text-3xl"></i>
+                        </div>
+                        <div class="font-bold mb-2">투자비 분석</div>
+                        <div class="text-sm opacity-90">CAPEX/OPEX 자동 산출</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-chart-line text-3xl"></i>
+                        </div>
+                        <div class="font-bold mb-2">ROI 판단</div>
+                        <div class="text-sm opacity-90">경제성 분석 및 비교</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-file-contract text-3xl"></i>
+                        </div>
+                        <div class="font-bold mb-2">보고서 생성</div>
+                        <div class="text-sm opacity-90">사업계획서 자동화</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-gavel text-3xl"></i>
+                        </div>
+                        <div class="font-bold mb-2">입찰 지원</div>
+                        <div class="text-sm opacity-90">RFQ·평가표 자동</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서비스 1: 시설장비 투자 ROI -->
+    <section id="service1" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-semibold mb-4">
+                    Service 1
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">스마트팜 시설장비 투자 ROI</h2>
+                <p class="text-xl text-gray-600">설계부터 입찰까지 전주기 의사결정 자동화</p>
+            </div>
+
+            <!-- 핵심 기능 -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">WebApp 대화형 컨설턴트</h3>
+                    <p class="text-gray-600 mb-4">자연어로 질의하면 설계·경제성·입찰까지 자동 응답 및 문서 생성</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            실시간 AI 상담
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            맞춤형 솔루션 제안
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Judgment API</h3>
+                    <p class="text-gray-600 mb-4">견적 비교, ROI 분석, 입찰 평가 등 전략 판단 API 제공</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            외부 시스템 연동 가능
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            RESTful API 제공
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">유형별 자동화</h3>
+                    <p class="text-gray-600 mb-4">신규·리모델링·단지형 각각에 최적화된 분석 제공</p>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full">✅ 신규</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">🔄 리모델링</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">🏢 단지형</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 주요 기능 테이블 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12">
+                <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6">
+                    <h3 class="text-2xl font-bold">주요 기능 구성</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold">분류</th>
+                                <th class="px-6 py-4 text-left font-semibold">기능</th>
+                                <th class="px-6 py-4 text-center font-semibold">유형별 대응</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">설계 최적화</td>
+                                <td class="px-6 py-4">기후·작물 기반 구조/설비 구성 추천</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">CAPEX 자동화</td>
+                                <td class="px-6 py-4">단가 DB 기반 구조/설비 비용 산출</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">OPEX 추정</td>
+                                <td class="px-6 py-4">에너지비·설비수명·운영 역량 반영</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">ROI 계산</td>
+                                <td class="px-6 py-4">ROI, IRR, BEP, 회수기간 자동 분석</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">견적 비교</td>
+                                <td class="px-6 py-4">5개 견적 정량+정성 비교 + 순위 도출</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">사업계획서 생성</td>
+                                <td class="px-6 py-4">보조금 제출용 + IR 보고서 자동 PDF화</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">입찰자료 구성</td>
+                                <td class="px-6 py-4">RFQ, 제안요청서, 비교표 자동 생성</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-green-600">✅</span>
+                                    <span class="text-blue-600">🔄</span>
+                                    <span class="text-purple-600">🏢</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- API 모듈 -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-plug text-blue-600 mr-3"></i>
+                    Judgment API 모듈
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h4 class="font-bold text-lg mb-2">설계 평가 API</h4>
+                        <p class="text-gray-600 text-sm mb-2">구조·설비·자동화 구성을 ROI 기준으로 평가</p>
+                        <div class="text-xs text-gray-500">입력: 도면, QOM, 작물, 자동화 수준</div>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h4 class="font-bold text-lg mb-2">CAPEX/OPEX 분석 API</h4>
+                        <p class="text-gray-600 text-sm mb-2">규모별 기자재 비용, 유지비용 자동 산출</p>
+                        <div class="text-xs text-gray-500">입력: 단가표, 설비 스펙</div>
+                    </div>
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <h4 class="font-bold text-lg mb-2">ROI 분석 API</h4>
+                        <p class="text-gray-600 text-sm mb-2">수익/비용/보조금 기반 수익성 자동 계산</p>
+                        <div class="text-xs text-gray-500">입력: 작물, 단가, 설비, 운영비</div>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h4 class="font-bold text-lg mb-2">견적 비교 API</h4>
+                        <p class="text-gray-600 text-sm mb-2">다건 견적서 비교 분석 + 정성 평가</p>
+                        <div class="text-xs text-gray-500">입력: 견적서 파일 또는 구조화 데이터</div>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-4">
+                        <h4 class="font-bold text-lg mb-2">입찰 평가 API</h4>
+                        <p class="text-gray-600 text-sm mb-2">제안서 점수화, 기술·가격·보증 조건 평가</p>
+                        <div class="text-xs text-gray-500">입력: 입찰사별 제안서, 조건</div>
+                    </div>
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                        <h4 class="font-bold text-lg mb-2">시뮬레이션 API</h4>
+                        <p class="text-gray-600 text-sm mb-2">민감도 분석, 변수 변화별 ROI 추이 분석</p>
+                        <div class="text-xs text-gray-500">입력: ROI 모델, 변수 설정값</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서비스 2: 빅데이터 ROI -->
+    <section id="service2" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full font-semibold mb-4">
+                    Service 2
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">스마트농업 빅데이터 ROI</h2>
+                <p class="text-xl text-gray-600">실시간 모니터링 및 AI 기반 운영 최적화</p>
+            </div>
+
+            <!-- 핵심 컨셉 -->
+            <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white rounded-2xl p-8 mb-12">
+                <h3 class="text-3xl font-bold mb-6 text-center">측정 → 분석 → 제어 → 수익</h3>
+                <p class="text-center text-lg mb-8 opacity-90">
+                    제어행위의 경제적 효과를 실시간으로 시각화하고<br>
+                    AI 예측 모델로 생육단계별 최적 환경을 자동 피드백합니다
+                </p>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                        <i class="fas fa-thermometer-half text-4xl mb-2"></i>
+                        <div class="font-bold">환경 데이터</div>
+                        <div class="text-sm opacity-90">온도·습도·CO₂</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                        <i class="fas fa-leaf text-4xl mb-2"></i>
+                        <div class="font-bold">생육 데이터</div>
+                        <div class="text-sm opacity-90">성장단계·품질</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                        <i class="fas fa-bolt text-4xl mb-2"></i>
+                        <div class="font-bold">에너지 데이터</div>
+                        <div class="text-sm opacity-90">전력·냉난방비</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                        <i class="fas fa-users text-4xl mb-2"></i>
+                        <div class="font-bold">노동 데이터</div>
+                        <div class="text-sm opacity-90">작업시간·효율</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 단계별 기능 -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-8">단계별 기능</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 bg-gray-50 p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-green-600">1</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg mb-2">데이터 수집 및 정규화</h4>
+                            <p class="text-gray-600">환경·관수·생육·경영 데이터 일원화</p>
+                            <div class="mt-2 text-sm text-green-600 font-semibold">→ 정확한 분석기반 확보</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 bg-gray-50 p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-blue-600">2</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg mb-2">데이터 품질검증·결측치 보정</h4>
+                            <p class="text-gray-600">센서 이상값 탐지 및 자동 보정</p>
+                            <div class="mt-2 text-sm text-blue-600 font-semibold">→ 신뢰도 높은 데이터 확보</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 bg-gray-50 p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-yellow-600">3</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg mb-2">AI기반 모니터링 분석</h4>
+                            <p class="text-gray-600">이상상황 자동탐지 및 알림 (온도, VPD, CO₂)</p>
+                            <div class="mt-2 text-sm text-yellow-600 font-semibold">→ 실시간 대응 가능</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 bg-gray-50 p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-purple-600">4</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg mb-2">ROI 분석</h4>
+                            <p class="text-gray-600">제어행위별 비용/편익 시뮬레이션</p>
+                            <div class="mt-2 text-sm text-purple-600 font-semibold">→ 투자 의사결정 근거 확보</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 bg-gray-50 p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-red-600">5</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg mb-2">피드백 제어·리포트</h4>
+                            <p class="text-gray-600">자동 리포트, 주차별 KPI 제공</p>
+                            <div class="mt-2 text-sm text-red-600 font-semibold">→ 지속적 개선 순환</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 주요 기능 -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-desktop text-green-600 text-3xl mr-4"></i>
+                        <h3 class="text-xl font-bold">실시간 모니터링 대시보드</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>온도, 습도, CO₂, EC, pH, DLI 등 환경지표 실시간 표시</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>병해·관수 이벤트 자동 기록 및 알림</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>환경-관수-병해 연동 로그 시각화</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-blue-600 text-3xl mr-4"></i>
+                        <h3 class="text-xl font-bold">AI 기반 ROI 시뮬레이터</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                            <span>에너지·관수·노동비 절감 효과 산출</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                            <span>"환경설정변경 → 생산성/비용 변화율" 자동 계산</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                            <span>민감도 분석으로 최적 운영 조건 도출</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-seedling text-yellow-600 text-3xl mr-4"></i>
+                        <h3 class="text-xl font-bold">생육단계별 환경 최적화</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                            <span>정식~수확기 단계별 온도·습도·관수 전략 제안</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                            <span>작기별 모델(딸기, 토마토 등) 연동</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-500 mt-1 mr-3"></i>
+                            <span>AI 기반 권장조치 가이드라인 자동생성</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-bar text-purple-600 text-3xl mr-4"></i>
+                        <h3 class="text-xl font-bold">경영성과 리포팅</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                            <span>생산량, 품질, 에너지비용, 순이익 자동 그래프화</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                            <span>작기별/월별 ROI 추세 분석</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                            <span>목표 vs 현실 ROI 차이 자동 경고</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 데모 섹션 -->
+    <section id="demo" class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">실시간 데모</h2>
+                <p class="text-xl text-gray-600">AgsmartROI의 강력한 분석 기능을 직접 체험해보세요</p>
+            </div>
+
+            <!-- 데모 탭 -->
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="demo-tab-btn active px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition font-semibold" data-tab="roi-calculator">
+                        <i class="fas fa-calculator mr-2"></i>시설 ROI 계산기
+                    </button>
+                    <button class="demo-tab-btn px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition font-semibold" data-tab="farm-analysis">
+                        <i class="fas fa-seedling mr-2"></i>농가 ROI 분석
+                    </button>
+                    <button class="demo-tab-btn px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition font-semibold" data-tab="monitoring">
+                        <i class="fas fa-chart-line mr-2"></i>실시간 모니터링
+                    </button>
+                    <button class="demo-tab-btn px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition font-semibold" data-tab="comparison">
+                        <i class="fas fa-balance-scale mr-2"></i>견적 비교
+                    </button>
+                </div>
+
+                <!-- ROI 계산기 데모 -->
+                <div class="demo-content active" id="roi-calculator">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-calculator text-green-600 mr-3"></i>
+                            스마트팜 시설 ROI 계산기
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- 입력 폼 -->
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block font-semibold mb-2">시설 유형</label>
+                                    <select id="facility-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="new">신규</option>
+                                        <option value="remodel">리모델링</option>
+                                        <option value="complex">단지형</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-semibold mb-2">시설 면적 (평)</label>
+                                    <input type="number" id="area" value="1000" class="w-full px-4 py-2 border border-gray-300 rounded-lg" min="100" max="10000">
+                                </div>
+                                <div>
+                                    <label class="block font-semibold mb-2">초기 투자비 (백만원)</label>
+                                    <input type="number" id="capex" value="500" class="w-full px-4 py-2 border border-gray-300 rounded-lg" min="100" max="5000">
+                                </div>
+                                <div>
+                                    <label class="block font-semibold mb-2">연간 운영비 (백만원)</label>
+                                    <input type="number" id="opex" value="100" class="w-full px-4 py-2 border border-gray-300 rounded-lg" min="10" max="1000">
+                                </div>
+                                <div>
+                                    <label class="block font-semibold mb-2">연간 예상 수익 (백만원)</label>
+                                    <input type="number" id="revenue" value="200" class="w-full px-4 py-2 border border-gray-300 rounded-lg" min="50" max="2000">
+                                </div>
+                                <button onclick="calculateROI()" class="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+                                    <i class="fas fa-calculator mr-2"></i>ROI 계산하기
+                                </button>
+                            </div>
+
+                            <!-- 결과 표시 -->
+                            <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6">
+                                <h4 class="font-bold text-lg mb-4">분석 결과</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4">
+                                        <div class="text-sm text-gray-600 mb-1">ROI (투자수익률)</div>
+                                        <div class="text-3xl font-bold text-green-600" id="roi-result">-</div>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4">
+                                        <div class="text-sm text-gray-600 mb-1">회수기간</div>
+                                        <div class="text-2xl font-bold text-blue-600" id="payback-result">-</div>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4">
+                                        <div class="text-sm text-gray-600 mb-1">연간 순이익</div>
+                                        <div class="text-2xl font-bold text-purple-600" id="profit-result">-</div>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4">
+                                        <div class="text-sm text-gray-600 mb-1">평당 수익성</div>
+                                        <div class="text-2xl font-bold text-yellow-600" id="per-area-result">-</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 농가 ROI 분석 데모 -->
+                <div class="demo-content" id="farm-analysis" style="display: none;">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-2 flex items-center">
+                                <i class="fas fa-seedling text-green-600 mr-3"></i>
+                                OO농가 수확량 ROI 및 리스크 분석
+                            </h3>
+                            <p class="text-gray-600">빅데이터 기반 실시간 농가 운영 분석 - 토마토 스마트팜 (1,000평)</p>
+                        </div>
+
+                        <!-- 1. 적정 범위 기준 설명서 -->
+                        <div class="mb-8">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-t-xl">
+                                <h4 class="text-xl font-bold flex items-center">
+                                    <i class="fas fa-clipboard-list mr-2"></i>
+                                    1. 적정 범위 기준 설명서
+                                </h4>
+                            </div>
+                            <div class="border-2 border-blue-200 rounded-b-xl p-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <!-- 환경 지표 -->
+                                    <div>
+                                        <h5 class="font-bold text-lg mb-4 text-blue-700">환경 관리 지표</h5>
+                                        <div class="space-y-3">
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">온도 (Temperature)</span>
+                                                    <span class="text-blue-600 font-bold">22-26°C</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 최적: 24°C | 허용: 20-28°C<br>
+                                                    • 야간: 18-20°C | 주간: 24-26°C
+                                                </div>
+                                            </div>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">습도 (Humidity)</span>
+                                                    <span class="text-blue-600 font-bold">60-80%</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 최적: 70% | 경고: <50% 또는 >85%<br>
+                                                    • 병해 예방: 65-75% 유지
+                                                </div>
+                                            </div>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">CO₂ 농도</span>
+                                                    <span class="text-blue-600 font-bold">800-1200ppm</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 최적: 1000ppm | 광합성 촉진<br>
+                                                    • 주간 공급: 08:00-16:00
+                                                </div>
+                                            </div>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">광량 (DLI)</span>
+                                                    <span class="text-blue-600 font-bold">12-18 mol/m²</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 최적: 15 mol/m² | 보광 필요시<br>
+                                                    • 동절기: 보광등 14시간 가동
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 양액 관리 지표 -->
+                                    <div>
+                                        <h5 class="font-bold text-lg mb-4 text-green-700">양액 관리 지표</h5>
+                                        <div class="space-y-3">
+                                            <div class="bg-green-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">EC (전기전도도)</span>
+                                                    <span class="text-green-600 font-bold">2.0-2.8 dS/m</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 생육기: 2.0-2.3 | 착과기: 2.5-2.8<br>
+                                                    • 수확기: 2.3-2.5
+                                                </div>
+                                            </div>
+                                            <div class="bg-green-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">pH (산도)</span>
+                                                    <span class="text-green-600 font-bold">5.8-6.5</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 최적: 6.0 | 양분 흡수 최대<br>
+                                                    • 매일 2회 측정 권장
+                                                </div>
+                                            </div>
+                                            <div class="bg-green-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">관수량</span>
+                                                    <span class="text-green-600 font-bold">1.5-2.5L/주/일</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 생육기: 1.5L | 착과기: 2.0L<br>
+                                                    • 수확기: 2.5L | 배액률: 20-30%
+                                                </div>
+                                            </div>
+                                            <div class="bg-green-50 p-4 rounded-lg">
+                                                <div class="flex justify-between items-center mb-2">
+                                                    <span class="font-semibold">배액률</span>
+                                                    <span class="text-green-600 font-bold">20-30%</span>
+                                                </div>
+                                                <div class="text-sm text-gray-600">
+                                                    • 최적: 25% | 염류 집적 방지<br>
+                                                    • <15%: 관수량 증가 필요
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                                    <p class="text-sm text-gray-700">
+                                        <i class="fas fa-info-circle text-yellow-600 mr-2"></i>
+                                        <strong>경고 기준:</strong> 각 지표가 권장 범위를 벗어나면 자동 알림이 발송되며, 
+                                        2시간 이상 지속 시 리스크 등급이 상승합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. ROI 및 리스크 관리 종합 분석 -->
+                        <div class="mb-8">
+                            <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-t-xl">
+                                <h4 class="text-xl font-bold flex items-center">
+                                    <i class="fas fa-chart-pie mr-2"></i>
+                                    2. ROI 및 리스크 관리 종합 분석
+                                </h4>
+                            </div>
+                            <div class="border-2 border-green-200 rounded-b-xl p-6">
+                                <!-- ROI 분석 -->
+                                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-xl">
+                                        <div class="text-sm opacity-90 mb-1">연간 총 수익</div>
+                                        <div class="text-3xl font-bold">420백만원</div>
+                                        <div class="text-sm mt-2 opacity-90">토마토 42톤 × 10,000원/kg</div>
+                                    </div>
+                                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl">
+                                        <div class="text-sm opacity-90 mb-1">연간 운영비</div>
+                                        <div class="text-3xl font-bold">180백만원</div>
+                                        <div class="text-sm mt-2 opacity-90">에너지 + 자재 + 인건비</div>
+                                    </div>
+                                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-xl">
+                                        <div class="text-sm opacity-90 mb-1">연간 순이익</div>
+                                        <div class="text-3xl font-bold">240백만원</div>
+                                        <div class="text-sm mt-2 opacity-90">ROI: 48% (초기투자 500M 기준)</div>
+                                    </div>
+                                </div>
+
+                                <!-- 비용 구성 -->
+                                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h5 class="font-bold mb-3">비용 구성 분석</h5>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between items-center">
+                                                <span>에너지비 (냉난방, 전기)</span>
+                                                <span class="font-semibold text-red-600">72백만원 (40%)</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                                <div class="h-full bg-red-500" style="width: 40%"></div>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <span>자재비 (양액, 종묘)</span>
+                                                <span class="font-semibold text-orange-600">54백만원 (30%)</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                                <div class="h-full bg-orange-500" style="width: 30%"></div>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <span>인건비</span>
+                                                <span class="font-semibold text-yellow-600">36백만원 (20%)</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                                <div class="h-full bg-yellow-500" style="width: 20%"></div>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <span>기타 (유지보수 등)</span>
+                                                <span class="font-semibold text-blue-600">18백만원 (10%)</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                                <div class="h-full bg-blue-500" style="width: 10%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h5 class="font-bold mb-3">수익성 지표</h5>
+                                        <div class="space-y-3">
+                                            <div class="flex justify-between items-center p-3 bg-white rounded">
+                                                <span>평당 연간 수익</span>
+                                                <span class="font-bold text-green-600">420,000원</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded">
+                                                <span>평당 순이익</span>
+                                                <span class="font-bold text-blue-600">240,000원</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded">
+                                                <span>kg당 생산비</span>
+                                                <span class="font-bold text-purple-600">4,286원</span>
+                                            </div>
+                                            <div class="flex justify-between items-center p-3 bg-white rounded">
+                                                <span>손익분기점</span>
+                                                <span class="font-bold text-orange-600">30톤/년</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 리스크 분석 -->
+                                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded mb-4">
+                                    <h5 class="font-bold text-red-700 mb-3 flex items-center">
+                                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                                        주요 리스크 요인
+                                    </h5>
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <div class="flex justify-between mb-2">
+                                                <span class="font-semibold">에너지 비용 변동</span>
+                                                <span class="px-2 py-1 bg-red-600 text-white rounded text-xs">높음</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600">유가 10% 상승 시 연간 7.2백만원 추가 비용</p>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between mb-2">
+                                                <span class="font-semibold">시세 변동</span>
+                                                <span class="px-2 py-1 bg-orange-600 text-white rounded text-xs">중간</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600">토마토 가격 20% 하락 시 84백만원 수익 감소</p>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between mb-2">
+                                                <span class="font-semibold">병해충 발생</span>
+                                                <span class="px-2 py-1 bg-yellow-600 text-white rounded text-xs">중간</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600">생산량 15% 감소 가능 (63백만원 손실)</p>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between mb-2">
+                                                <span class="font-semibold">설비 고장</span>
+                                                <span class="px-2 py-1 bg-green-600 text-white rounded text-xs">낮음</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600">예방 정비로 연 2회 미만 발생</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                    <p class="text-sm text-gray-700">
+                                        <i class="fas fa-lightbulb text-blue-600 mr-2"></i>
+                                        <strong>AI 추천:</strong> 에너지 효율 개선으로 연간 14.4백만원 절감 가능 (냉난방 스케줄 최적화 + LED 보광등 교체)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. 수익성 향상 종합 실행 계획서 -->
+                        <div class="mb-8">
+                            <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 rounded-t-xl">
+                                <h4 class="text-xl font-bold flex items-center">
+                                    <i class="fas fa-tasks mr-2"></i>
+                                    3. 수익성 향상 종합 실행 계획서
+                                </h4>
+                            </div>
+                            <div class="border-2 border-purple-200 rounded-b-xl p-6">
+                                <div class="space-y-4">
+                                    <!-- 단기 계획 (1-3개월) -->
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <div class="flex items-center mb-3">
+                                            <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-sm font-bold mr-3">단기</span>
+                                            <h5 class="font-bold text-lg">1-3개월 실행 계획</h5>
+                                        </div>
+                                        <div class="space-y-3 ml-6">
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">환경 제어 자동화 고도화</div>
+                                                    <div class="text-sm text-gray-600">AI 기반 온습도 자동 제어 시스템 도입 → 에너지비 10% 절감 (7.2백만원/년)</div>
+                                                    <div class="text-xs text-purple-600 mt-1">투자: 15백만원 | 회수기간: 2.1년</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">병해 조기 경보 시스템 강화</div>
+                                                    <div class="text-sm text-gray-600">센서 추가 설치 + AI 이미지 분석 → 병해 발생률 30% 감소</div>
+                                                    <div class="text-xs text-purple-600 mt-1">투자: 8백만원 | 예상 손실 방지: 19백만원/년</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">관수 타이밍 최적화</div>
+                                                    <div class="text-sm text-gray-600">생육 단계별 맞춤 관수 스케줄 적용 → 생산량 5% 증가 (21백만원/년)</div>
+                                                    <div class="text-xs text-purple-600 mt-1">투자: 0원 (소프트웨어 업데이트)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 중기 계획 (3-6개월) -->
+                                    <div class="bg-blue-50 rounded-lg p-4">
+                                        <div class="flex items-center mb-3">
+                                            <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm font-bold mr-3">중기</span>
+                                            <h5 class="font-bold text-lg">3-6개월 실행 계획</h5>
+                                        </div>
+                                        <div class="space-y-3 ml-6">
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">LED 보광등 교체</div>
+                                                    <div class="text-sm text-gray-600">기존 HPS → LED 전환 → 전기료 20% 절감 (8.6백만원/년)</div>
+                                                    <div class="text-xs text-blue-600 mt-1">투자: 25백만원 | 회수기간: 2.9년</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">고효율 순환팬 설치</div>
+                                                    <div class="text-sm text-gray-600">공기 순환 개선 → 온도 편차 감소 + 냉난방비 15% 절감</div>
+                                                    <div class="text-xs text-blue-600 mt-1">투자: 12백만원 | 예상 절감: 10.8백만원/년</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">양액 재활용 시스템 구축</div>
+                                                    <div class="text-sm text-gray-600">배액 재활용 → 양액비 25% 절감 (13.5백만원/년)</div>
+                                                    <div class="text-xs text-blue-600 mt-1">투자: 30백만원 | 회수기간: 2.2년</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 장기 계획 (6-12개월) -->
+                                    <div class="bg-green-50 rounded-lg p-4">
+                                        <div class="flex items-center mb-3">
+                                            <span class="px-3 py-1 bg-green-600 text-white rounded-full text-sm font-bold mr-3">장기</span>
+                                            <h5 class="font-bold text-lg">6-12개월 실행 계획</h5>
+                                        </div>
+                                        <div class="space-y-3 ml-6">
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">태양광 발전 설비 도입</div>
+                                                    <div class="text-sm text-gray-600">300kW 태양광 패널 → 전기료 40% 절감 (17.3백만원/년)</div>
+                                                    <div class="text-xs text-green-600 mt-1">투자: 180백만원 | 회수기간: 10.4년 (정부 보조금 50% 적용 시 5.2년)</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">복합 환경 제어 시스템 고도화</div>
+                                                    <div class="text-sm text-gray-600">온도·습도·CO₂ 통합 제어 → 생산량 10% 증가 (42백만원/년)</div>
+                                                    <div class="text-xs text-green-600 mt-1">투자: 45백만원 | 회수기간: 1.1년</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                                                <div class="flex-1">
+                                                    <div class="font-semibold">자동 수확 로봇 도입 검토</div>
+                                                    <div class="text-sm text-gray-600">인건비 40% 절감 가능 (14.4백만원/년) - ROI 분석 후 결정</div>
+                                                    <div class="text-xs text-green-600 mt-1">예상 투자: 120백만원 | 회수기간: 8.3년</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 종합 기대 효과 -->
+                                <div class="mt-6 bg-gradient-to-r from-yellow-400 to-orange-400 text-white p-6 rounded-xl">
+                                    <h5 class="font-bold text-xl mb-4 flex items-center">
+                                        <i class="fas fa-trophy mr-2"></i>
+                                        종합 기대 효과 (전체 실행 시)
+                                    </h5>
+                                    <div class="grid md:grid-cols-4 gap-4">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold">+72.6</div>
+                                            <div class="text-sm opacity-90">백만원/년 절감</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold">+30%</div>
+                                            <div class="text-sm opacity-90">순이익 증가</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold">312.6</div>
+                                            <div class="text-sm opacity-90">백만원 연간 순이익</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold">62.5%</div>
+                                            <div class="text-sm opacity-90">최종 ROI</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. 시간대별 관수 전략 가이드 -->
+                        <div class="mb-8">
+                            <div class="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-4 rounded-t-xl">
+                                <h4 class="text-xl font-bold flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    4. 시간대별 관수 전략 가이드
+                                </h4>
+                            </div>
+                            <div class="border-2 border-teal-200 rounded-b-xl p-6">
+                                <div class="mb-6">
+                                    <p class="text-gray-600 mb-4">생육 단계별 최적 관수 스케줄 - 토마토 착과기 기준</p>
+                                    <div class="bg-teal-50 p-4 rounded-lg">
+                                        <div class="font-semibold mb-2">현재 생육 단계: 착과기 (5-6단 착과)</div>
+                                        <div class="text-sm text-gray-600">
+                                            목표 일일 관수량: 2.0L/주 | 관수 횟수: 6-8회 | 배액률 목표: 25%
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 시간대별 스케줄 -->
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg border-l-4 border-orange-400">
+                                        <div class="font-bold text-orange-600 text-lg w-20">06:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">1차 관수 (일출 직후)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 200ml/주 | EC: 2.5 dS/m | 지속: 5분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-info-circle text-orange-500 mr-1"></i>
+                                                야간 수분 손실 보충 + 광합성 준비
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border-l-4 border-blue-400">
+                                        <div class="font-bold text-blue-600 text-lg w-20">08:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">2차 관수 (광합성 활성기)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 300ml/주 | EC: 2.6 dS/m | 지속: 7분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-sun text-blue-500 mr-1"></i>
+                                                광합성 최대 활성화 시간대
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-lg border-l-4 border-green-400">
+                                        <div class="font-bold text-green-600 text-lg w-20">10:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">3차 관수 (오전 피크)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 350ml/주 | EC: 2.7 dS/m | 지속: 8분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-arrow-up text-green-500 mr-1"></i>
+                                                일사량 최대 + 증산 활발 → 최대 관수량
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border-l-4 border-yellow-400">
+                                        <div class="font-bold text-yellow-600 text-lg w-20">12:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">4차 관수 (정오)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 300ml/주 | EC: 2.6 dS/m | 지속: 7분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-thermometer-half text-yellow-500 mr-1"></i>
+                                                고온 스트레스 방지
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border-l-4 border-purple-400">
+                                        <div class="font-bold text-purple-600 text-lg w-20">14:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">5차 관수 (오후)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 300ml/주 | EC: 2.5 dS/m | 지속: 7분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-leaf text-purple-500 mr-1"></i>
+                                                지속적인 수분 공급
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border-l-4 border-indigo-400">
+                                        <div class="font-bold text-indigo-600 text-lg w-20">16:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">6차 관수 (일몰 전)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 250ml/주 | EC: 2.4 dS/m | 지속: 6분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-moon text-indigo-500 mr-1"></i>
+                                                야간 수분 확보
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4 p-4 bg-gradient-to-r from-gray-50 to-slate-50 rounded-lg border-l-4 border-gray-400">
+                                        <div class="font-bold text-gray-600 text-lg w-20">18:00</div>
+                                        <div class="flex-1">
+                                            <div class="font-semibold mb-1">7차 관수 (일몰 후 - 선택)</div>
+                                            <div class="text-sm text-gray-600 mb-2">관수량: 150ml/주 | EC: 2.3 dS/m | 지속: 4분</div>
+                                            <div class="text-xs bg-white px-3 py-1 rounded inline-block">
+                                                <i class="fas fa-adjust text-gray-500 mr-1"></i>
+                                                배액률 20% 미만 시에만 실시
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 배액 관리 -->
+                                <div class="mt-6 grid md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-50 border-2 border-blue-200 p-4 rounded-lg">
+                                        <h5 class="font-bold mb-3 text-blue-700">배액 관리 기준</h5>
+                                        <ul class="space-y-2 text-sm">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                                <span>목표 배액률: 25% (관수량 2.0L 중 0.5L 배출)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                                <span>배액 EC: 급액 EC + 0.5 dS/m 이내 유지</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                                <span>배액률 15% 미만: 관수량 10% 증가</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                                <span>배액률 35% 초과: 관수량 10% 감소</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-yellow-50 border-2 border-yellow-200 p-4 rounded-lg">
+                                        <h5 class="font-bold mb-3 text-yellow-700">날씨별 조정 전략</h5>
+                                        <ul class="space-y-2 text-sm">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-sun text-yellow-600 mt-1 mr-2"></i>
+                                                <span><strong>맑음:</strong> 기본 스케줄 적용 (2.0L/주)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-cloud-sun text-orange-600 mt-1 mr-2"></i>
+                                                <span><strong>흐림:</strong> 관수량 15% 감소 (1.7L/주)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-cloud-rain text-blue-600 mt-1 mr-2"></i>
+                                                <span><strong>비/눈:</strong> 관수량 30% 감소 (1.4L/주)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-temperature-high text-red-600 mt-1 mr-2"></i>
+                                                <span><strong>폭염:</strong> 관수량 20% 증가 (2.4L/주)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- AI 추천 -->
+                                <div class="mt-6 bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-4 rounded-lg">
+                                    <div class="flex items-start space-x-3">
+                                        <i class="fas fa-robot text-2xl mt-1"></i>
+                                        <div>
+                                            <div class="font-bold text-lg mb-2">AI 실시간 추천</div>
+                                            <p class="text-sm opacity-90">
+                                                현재 기상 조건(맑음, 기온 26°C)과 배액률 23%를 고려하여, 
+                                                <strong>10시 관수량을 380ml로 8% 증가</strong>할 것을 권장합니다. 
+                                                예상 효과: 생산량 2% 증가 (약 840kg, 8.4백만원/년 추가 수익)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 종합 요약 -->
+                        <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white p-6 rounded-xl">
+                            <h4 class="text-xl font-bold mb-4 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                종합 분석 요약
+                            </h4>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+                                    <div class="text-2xl font-bold mb-1">우수</div>
+                                    <div class="text-sm opacity-90">현재 운영 상태</div>
+                                    <div class="mt-2 text-xs">모든 지표 적정 범위 내 유지</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+                                    <div class="text-2xl font-bold mb-1">+30%</div>
+                                    <div class="text-sm opacity-90">개선 가능 수익</div>
+                                    <div class="mt-2 text-xs">실행 계획 완료 시</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+                                    <div class="text-2xl font-bold mb-1">낮음</div>
+                                    <div class="text-sm opacity-90">전체 리스크 수준</div>
+                                    <div class="mt-2 text-xs">예방 관리 체계 구축됨</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 실시간 모니터링 데모 -->
+                <div class="demo-content" id="monitoring" style="display: none;">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-chart-line text-blue-600 mr-3"></i>
+                            실시간 환경 모니터링
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-red-50 rounded-lg p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-thermometer-half text-red-600 text-2xl mr-3"></i>
+                                        <span class="font-bold">온도</span>
+                                    </div>
+                                    <span class="text-3xl font-bold text-red-600">24.5°C</span>
+                                </div>
+                                <div class="text-sm text-gray-600">권장 범위: 22-26°C</div>
+                                <div class="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-red-500 rounded-full" style="width: 62.5%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-tint text-blue-600 text-2xl mr-3"></i>
+                                        <span class="font-bold">습도</span>
+                                    </div>
+                                    <span class="text-3xl font-bold text-blue-600">68%</span>
+                                </div>
+                                <div class="text-sm text-gray-600">권장 범위: 60-80%</div>
+                                <div class="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-blue-500 rounded-full" style="width: 68%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 rounded-lg p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-wind text-green-600 text-2xl mr-3"></i>
+                                        <span class="font-bold">CO₂</span>
+                                    </div>
+                                    <span class="text-3xl font-bold text-green-600">850ppm</span>
+                                </div>
+                                <div class="text-sm text-gray-600">권장 범위: 800-1200ppm</div>
+                                <div class="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-green-500 rounded-full" style="width: 42.5%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-yellow-50 rounded-lg p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-sun text-yellow-600 text-2xl mr-3"></i>
+                                        <span class="font-bold">광량 (DLI)</span>
+                                    </div>
+                                    <span class="text-3xl font-bold text-yellow-600">15 mol/m²</span>
+                                </div>
+                                <div class="text-sm text-gray-600">권장 범위: 12-18 mol/m²</div>
+                                <div class="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-yellow-500 rounded-full" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 차트 영역 -->
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-bold mb-4">24시간 환경 추이</h4>
+                            <div style="height: 300px;">
+                                <canvas id="monitoring-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 견적 비교 데모 -->
+                <div class="demo-content" id="comparison" style="display: none;">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-balance-scale text-purple-600 mr-3"></i>
+                            AI 기반 견적 비교 분석
+                        </h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="px-6 py-4 text-left font-semibold">항목</th>
+                                        <th class="px-6 py-4 text-center font-semibold">A사</th>
+                                        <th class="px-6 py-4 text-center font-semibold">B사</th>
+                                        <th class="px-6 py-4 text-center font-semibold">C사</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 font-semibold">총 견적가 (백만원)</td>
+                                        <td class="px-6 py-4 text-center">450</td>
+                                        <td class="px-6 py-4 text-center text-green-600 font-bold">420</td>
+                                        <td class="px-6 py-4 text-center">480</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-semibold">에너지 효율</td>
+                                        <td class="px-6 py-4 text-center">
+                                            <span class="text-yellow-600">★★★☆☆</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <span class="text-yellow-600">★★★★☆</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-center">
+                                            <span class="text-yellow-600">★★★★★</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-semibold">A/S 조건</td>
+                                        <td class="px-6 py-4 text-center">2년</td>
+                                        <td class="px-6 py-4 text-center">3년</td>
+                                        <td class="px-6 py-4 text-center text-green-600 font-bold">5년</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-semibold">기술 수준</td>
+                                        <td class="px-6 py-4 text-center">85점</td>
+                                        <td class="px-6 py-4 text-center text-green-600 font-bold">92점</td>
+                                        <td class="px-6 py-4 text-center">88점</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-semibold">납기</td>
+                                        <td class="px-6 py-4 text-center">60일</td>
+                                        <td class="px-6 py-4 text-center text-green-600 font-bold">45일</td>
+                                        <td class="px-6 py-4 text-center">75일</td>
+                                    </tr>
+                                    <tr class="bg-green-50">
+                                        <td class="px-6 py-4 font-bold">종합 점수</td>
+                                        <td class="px-6 py-4 text-center font-bold">78점</td>
+                                        <td class="px-6 py-4 text-center">
+                                            <div class="inline-block px-4 py-2 bg-green-600 text-white rounded-lg font-bold">
+                                                92점 (최우수)
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 text-center font-bold">85점</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg mb-3 flex items-center">
+                                <i class="fas fa-lightbulb text-blue-600 mr-2"></i>
+                                AI 추천 의견
+                            </h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                <strong class="text-blue-600">B사</strong>를 최우선으로 추천합니다. 
+                                가격 경쟁력(7% 저렴)과 기술 수준(92점)이 가장 우수하며, 
+                                납기(45일)도 가장 빠릅니다. 3년 A/S 조건도 만족스러운 수준입니다. 
+                                다만, C사의 에너지 효율과 5년 A/S는 장기 운영 시 고려 가치가 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">AgsmartROI로 스마트팜의 미래를 설계하세요</h2>
+            <p class="text-xl mb-8 opacity-90">AI 기반 의사결정으로 투자 리스크를 최소화하고 운영 효율을 극대화합니다</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#contact" class="px-8 py-4 bg-white text-green-600 rounded-lg hover:bg-gray-100 transition shadow-lg font-semibold inline-flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i>
+                    <span>무료 상담 신청</span>
+                </a>
+                <a href="#demo" class="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white/10 transition inline-flex items-center space-x-2">
+                    <i class="fas fa-play"></i>
+                    <span>데모 다시 보기</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500">AgsmartROI</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        스마트농업 ROI 통합 플랫폼<br>
+                        by 이암허브
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">AgsmartROI</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#service1" class="hover:text-green-500 transition">시설장비 ROI</a></li>
+                        <li><a href="#service2" class="hover:text-green-500 transition">빅데이터 ROI</a></li>
+                        <li><a href="#demo" class="hover:text-green-500 transition">데모 체험</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">이암허브</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-green-500 transition">홈</a></li>
+                        <li><a href="index.html#services" class="hover:text-green-500 transition">서비스</a></li>
+                        <li><a href="index.html#contact" class="hover:text-green-500 transition">문의</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">연락처</h4>
+                    <p class="text-gray-400 text-sm">
+                        구교영 대표이사<br>
+                        (주)이암허브
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2008-2025 (주)이암허브. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/agroi.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9927bada1fdb2691","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
